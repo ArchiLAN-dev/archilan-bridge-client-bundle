@@ -33,7 +33,7 @@ final class BridgeClientPool
      * Returns a cached BridgeClient for the given session, creating one if absent.
      *
      * @param string $sessionId Unique session identifier (used as cache key).
-     * @param string $baseUrl   Bridge HTTP base URL — only used on first access.
+     * @param string $baseUrl   Bridge HTTP base URL - only used on first access.
      */
     public function get(string $sessionId, string $baseUrl): BridgeClient
     {
@@ -51,7 +51,7 @@ final class BridgeClientPool
     }
 
     /**
-     * Removes all cached clients — useful for test teardown or long-lived workers.
+     * Removes all cached clients - useful for test teardown or long-lived workers.
      */
     public function releaseAll(): void
     {

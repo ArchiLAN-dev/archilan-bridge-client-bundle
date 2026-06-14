@@ -11,7 +11,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
  * Creates BridgeClient instances for any bridge URL.
  *
  * The admin token is shared across all sessions (single env var).
- * The base URL is dynamic — obtained at runtime from the orchestrateur session data.
+ * The base URL is dynamic - obtained at runtime from the orchestrateur session data.
  *
  * Inject this factory wherever you need a bridge client on demand:
  *

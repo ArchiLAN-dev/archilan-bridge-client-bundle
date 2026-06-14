@@ -20,7 +20,7 @@ final class ArchiBridgeExtension extends Extension
 
         // Any service implementing WsSubscriber (or a sub-interface: FeedListener,
         // StateChangedListener, …) is automatically tagged and injected into
-        // WsDispatcherFactory — no manual wiring needed.
+        // WsDispatcherFactory - no manual wiring needed.
         $container->registerForAutoconfiguration(WsSubscriber::class)
             ->addTag('archi_bridge.ws_subscriber');
 

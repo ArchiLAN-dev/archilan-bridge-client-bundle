@@ -12,7 +12,7 @@ use Archilan\BridgeClientBundle\Bridge\BridgeClientFactory;
 /**
  * Creates WsEventDispatcher instances pre-wired with all registered subscribers.
  *
- * The target bridge is specified at call time via a URL — one dispatcher per session.
+ * The target bridge is specified at call time via a URL - one dispatcher per session.
  * All WsSubscriber services are injected automatically via `archi_bridge.ws_subscriber`.
  *
  * To listen to two sessions concurrently, create two dispatchers (each in its own process

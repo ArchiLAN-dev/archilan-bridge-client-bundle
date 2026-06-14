@@ -15,18 +15,18 @@ use function Symfony\Component\DependencyInjection\Loader\Configurator\tagged_it
 return static function (ContainerConfigurator $container): void {
     $services = $container->services();
 
-    // Shared factory — token from config, HTTP client from Symfony's autowiring
+    // Shared factory - token from config, HTTP client from Symfony's autowiring
     $services->set(BridgeClientFactory::class)
         ->args([
             '%archi_bridge.admin_token%',
             service(HttpClientInterface::class),
         ]);
 
-    // Request-scoped pool — one BridgeClient per session, cached by session ID
+    // Request-scoped pool - one BridgeClient per session, cached by session ID
     $services->set(BridgeClientPool::class)
         ->args([service(BridgeClientFactory::class)]);
 
-    // WS dispatcher factory — subscribers auto-injected via tagged_iterator
+    // WS dispatcher factory - subscribers auto-injected via tagged_iterator
     $services->set(WsDispatcherFactory::class)
         ->args([
             service(BridgeClientFactory::class),

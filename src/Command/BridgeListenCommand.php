@@ -50,7 +50,7 @@ final class BridgeListenCommand extends Command implements SignalableCommandInte
     /** @return list<int> */
     public function getSubscribedSignals(): array
     {
-        return [2, 15]; // SIGINT, SIGTERM — literals for Windows compatibility (pcntl constants undefined)
+        return [2, 15]; // SIGINT, SIGTERM - literals for Windows compatibility (pcntl constants undefined)
     }
 
     /**
@@ -100,7 +100,7 @@ final class BridgeListenCommand extends Command implements SignalableCommandInte
         $baseDelay    = is_numeric($retryOption) ? max(1, (int) $retryOption) : 5;
         $currentDelay = $baseDelay;
 
-        $io->title('Archilan Bridge — WebSocket listener');
+        $io->title('Archilan Bridge - WebSocket listener');
         $io->comment("Target: {$url}");
         $io->comment('Press Ctrl+C to stop.');
 
@@ -113,7 +113,7 @@ final class BridgeListenCommand extends Command implements SignalableCommandInte
 
                 $snap = $this->dispatcher->snapshot();
                 $io->success(sprintf(
-                    'Connected — session=%s  slots=%d  wsConnected=%s',
+                    'Connected - session=%s  slots=%d  wsConnected=%s',
                     $snap->sessionId,
                     count($snap->slots),
                     $snap->wsConnected ? 'yes' : 'no',
@@ -124,7 +124,7 @@ final class BridgeListenCommand extends Command implements SignalableCommandInte
 
                 $this->dispatcher->listen(); // blocks until connection closes or stop() is called
             } catch (WsAuthException $e) {
-                $io->error('Authentication failed — check archi_bridge.admin_token: '.$e->getMessage());
+                $io->error('Authentication failed - check archi_bridge.admin_token: '.$e->getMessage());
 
                 return Command::FAILURE; // permanent error, never retry
             } catch (WsConnectionException $e) {

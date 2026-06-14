@@ -1,6 +1,6 @@
 {
     "name": "archilan/bridge-client-bundle",
-    "description": "Symfony bundle — autoconfigures the Archilan bridge WebSocket dispatcher.",
+    "description": "Symfony bundle - autoconfigures the Archilan bridge WebSocket dispatcher.",
     "type": "symfony-bundle",
     "license": "proprietary",
     "repositories": [
